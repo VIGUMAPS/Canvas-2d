@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+
+      <style>
+         #test {
+            width: 100px;
+            height:100px;
+            margin: 0px auto;
+         }
+      </style>
+
+      <script type="text/javascript">
+         function drawShape(){
+
+            // Get the canvas element using the DOM
+            var mycanvas = document.getElementById('mycanvas');
+
+            // Make sure we don't execute when canvas isn't supported
+            if (mycanvas.getContext){
+
+               // use getContext to use the canvas for drawing
+               var ctx = mycanvas.getContext('2d');
+
+               // Draw shapes
+               ctx.fillRect(25,25,100,100);
+               ctx.clearRect(45,45,60,60);
+               ctx.strokeRect(50,50,50,50);
+            }
+
+            else {
+               alert('You need Safari or Firefox 1.5+ to see this demo.');
+            }
+         }
+      </script>
+
+   </head>
+
+   <body id="test">
+      <canvas id="mycanvas"></canvas>
+      <button onClick = "drawShape()">Click to run Canvas</button>
+   </body>
+
+</html>
